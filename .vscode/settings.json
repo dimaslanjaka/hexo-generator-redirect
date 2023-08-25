@@ -1,7 +1,7 @@
 {
   "files.associations": {
-    "*.njk": "njk",
-    "*.nj": "njk"
+    "*.njk": "html",
+    "*.nj": "html"
   },
   "terminal.integrated.env.linux": {
     "PATH": "${env:PATH}:${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin"
