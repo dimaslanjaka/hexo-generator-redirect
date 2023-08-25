@@ -1,0 +1,4 @@
+[submodule "lib"]
+	path = lib
+	url = https://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@github.com/dimaslanjaka/hexo-generator-redirect
+	branch = pre-release
