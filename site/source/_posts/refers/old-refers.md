@@ -40,10 +40,6 @@ updated: 2023-08-08T14:46:03+07:00
 wordcount: 1871
 ---
 
-<script>
-  window.location.replace('/2021/12/blogger-conditional-tags.html');
-</script>
-
 # Basic
 Basic blogger conditional tags
 
