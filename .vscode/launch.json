@@ -12,7 +12,7 @@
       "env": {
         "NODE_ENV": "production"
       },
-      "cwd": "${workspaceFolder}/../../site"
+      "cwd": "${workspaceFolder}/site"
     },
     {
       "command": "hexo clean && hexo s --dev",
@@ -22,7 +22,7 @@
       "env": {
         "NODE_ENV": "development"
       },
-      "cwd": "${workspaceFolder}/../../site"
+      "cwd": "${workspaceFolder}/site"
     },
     {
       "command": "hexo clean && hexo --debug --dev",
@@ -32,7 +32,7 @@
       "env": {
         "NODE_ENV": "development"
       },
-      "cwd": "${workspaceFolder}/../../site"
+      "cwd": "${workspaceFolder}/site"
     }
   ]
 }
