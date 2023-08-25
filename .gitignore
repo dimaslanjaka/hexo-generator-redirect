@@ -8,3 +8,4 @@ build
 .yarn/unplug*
 yarn.lock
 package-lock.json
+.env
