@@ -1,10 +1,42 @@
 {
+  "files.associations": {
+    "*.njk": "njk",
+    "*.nj": "njk"
+  },
   "terminal.integrated.env.linux": {
     "PATH": "${env:PATH}:${workspaceFolder}/node_modules/.bin:${workspaceFolder}/bin"
   },
   "terminal.integrated.env.windows": {
     "PATH": "${env:PATH};${workspaceFolder}\\node_modules\\.bin;${workspaceFolder}\\bin"
   },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Cygwin": {
+      "path": "C:\\cygwin64\\bin\\bash.exe",
+      "args": [
+        "--login",
+        "-i"
+      ],
+      "env": {
+        "CHERE_INVOKING": "1"
+      }
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "npm.enableRunFromFolder": true,
   "files.autoSave": "onWindowChange",
   "files.autoSaveDelay": 30000,
@@ -14,6 +46,7 @@
   "emmet.includeLanguages": {
     "ejs": "html",
     "njk": "html",
+    "nunjucks": "html"
   },
   "emmet.syntaxProfiles": {
     "njk": "html",
@@ -26,12 +59,16 @@
   "typescript.suggestionActions.enabled": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": true,
-    "source.fixAll.eslint": true // let ESLint take formating and linting
+    "source.fixAll": true // let ESLint take formating and linting
   },
   "eslint.validate": [
     "javascript",
     "typescript"
   ],
+  "[nunjucks]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
   "[ejs]": {
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -39,20 +76,24 @@
   "[scss]": {
     "editor.suggest.insertMode": "replace",
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "vscode.css-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[css]": {
     "editor.suggest.insertMode": "replace",
     "editor.formatOnSave": false,
-    "editor.defaultFormatter": "vscode.css-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.formatOnSave": true, // enable json formating with default vscode formatter
+    "editor.formatOnSave": false, // enable json formating with default vscode formatter
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[markdown]": {
     "editor.formatOnSave": false,
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false,
+      "source.fixAll.eslint": false
+    }
   },
   "[jsonc]": {
     "editor.formatOnSave": true,
@@ -64,7 +105,10 @@
   },
   "[javascript]": {
     "editor.formatOnSave": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false
+    }
   },
   "editor.formatOnSave": false,
   "editor.tabSize": 2,
@@ -75,8 +119,9 @@
     "**/tmp/yarn": true
   },
   "code-runner.executorMap": {
+    "typescriptreact": "cross-env-shell DEBUG=chimera-* ts-node",
     "javascript": "node",
-    "typescript": "node -r ts-node/register",
+    "typescript": "cross-env-shell DEBUG=git-command-helper,chimera-* ts-node",
     "coffeescript": "coffee",
     "sass": "sass --style expanded",
     "scss": "scss --style expanded",
@@ -88,7 +133,7 @@
   "code-runner.clearPreviousOutput": true,
   "code-runner.respectShebang": true,
   "typescript.tsdk": "./node_modules/typescript/lib",
-  "typescript.format.enable": true,
+  "typescript.format.enable": false,
   "typescript.tsserver.enableTracing": false,
   "typescript.tsserver.log": "off",
   "typescript.tsserver.trace": "off",
@@ -97,7 +142,10 @@
   "prettier.enableDebugLogs": true,
   "prettier.prettierPath": "./node_modules/prettier",
   "prettier.printWidth": 180,
-  "npm.packageManager": "npm",
+  "npm.packageManager": "yarn",
   "git.enabled": true,
-  "eslint.packageManager": "npm"
+  "explorer.autoReveal": true,
+  "git.autofetch": true,
+  "git.autorefresh": true,
+  "git.autoStash": false
 }
