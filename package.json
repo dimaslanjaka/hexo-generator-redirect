@@ -1,5 +1,5 @@
 {
-    "name": "hexo-generator-redirect",
+    "name": "hexo-generator-redirect-monorepo",
     "version": "1.4.5",
     "description": "Hexo plugin that generates additional redirect pages",
     "main": "index.js",
@@ -63,5 +63,10 @@
         "eslint-plugin-prettier": "^4.2.1",
         "git-command-helper": "^2.0.1",
         "prettier": "^2.8.8"
-    }
+    },
+    "packageManager": "yarn@3.6.3",
+    "workspaces": [
+        "site",
+        "lib"
+    ]
 }
